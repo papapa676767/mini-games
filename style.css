@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background: radial-gradient(
+        ellipse at 50% 0%,
+        #102B50,
+        #09152D 40%,
+        #030816
+    );
+
+    color: #D9F7FF;
+    font-family: 'Russo One', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ЗВЁЗДНОЕ НЕБО */
+
+.stars {
+    position: fixed;
+    inset: -50%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    opacity: 0.8;
+
+    background-image:
+        radial-gradient(2px 2px at 5% 8%, white 50%, transparent 100%),
+        radial-gradient(2px 2px at 18% 35%, #B8F3FF 50%, transparent 100%),
+        radial-gradient(1px 1px at 33% 15%, white 50%, transparent 100%),
+        radial-gradient(3px 3px at 48% 72%, #8ADFFF 50%, transparent 100%),
+        radial-gradient(2px 2px at 63% 28%, white 50%, transparent 100%),
+        radial-gradient(3px 3px at 78% 55%, #B8F3FF 50%, transparent 100%),
+        radial-gradient(1px 1px at 91% 12%, white 50%, transparent 100%),
+        radial-gradient(2px 2px at 12% 88%, #8ADFFF 50%, transparent 100%),
+        radial-gradient(1px 1px at 85% 91%, white 50%, transparent 100%);
+
+    background-size: 420px 380px;
+    animation: starDrift 18s linear infinite;
+    background-repeat: repeat;
+    will-change: transform, opacity;
+}
+
+@keyframes starDrift {
+    from {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(180px, 130px);
+    }
+}
+
+/* Независимое мерцание звёзд */
+.stars {
+    animation:
+        starDrift 18s linear infinite,
+        starTwinkle 6s ease-in-out infinite alternate;
+}
+
+.stars-2 {
+    opacity: 0.6;
+    animation:
+        starDrift 23s linear infinite reverse,
+        starTwinkle 4.9s ease-in-out infinite alternate;
+    animation-delay: -2s, -1.5s;
+}
+
+.stars-3 {
+    opacity: 0.45;
+    animation:
+        starDrift 15s linear infinite,
+        starTwinkle 5.6s ease-in-out infinite alternate;
+    animation-delay: -7s, -3s;
+}
+
+@keyframes starTwinkle {
+    0% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.85;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
+
+/* ОСНОВНОЙ КОНТЕЙНЕР */
+
+.container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+    padding: 35px 22px;
+}
+
+/* ГЛАВНЫЙ ЗАГОЛОВОК */
+
+.header {
+    text-align: center;
+    padding: 20px 0 27px;
+}
+
+.header h1 {
+    font-size: clamp(27px, 7vw, 43px);
+    color: #E5FAFF;
+
+    text-shadow:
+        0 0 7px #B9F3FF,
+        0 0 18px #36BFFF,
+        0 0 35px #087BCB;
+}
+
+/* ГЛАВНАЯ ПОЛОСА */
+
+.main-line {
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #8BEAFF,
+        white,
+        #8BEAFF,
+        transparent
+    );
+
+    box-shadow: 0 0 12px #45CFFF;
+
+    margin-bottom: 0;
+}
+
+/* PLAY FOR FREE */
+
+.tagline {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 85px;
+
+    font-size: clamp(14px, 4vw, 19px);
+    letter-spacing: 5px;
+    color: #B8F3FF;
+
+    text-shadow:
+        0 0 7px #B9F3FF,
+        0 0 15px #36BFFF,
+        0 0 28px #087BCB;
+}
+
+/* РАЗДЕЛЫ ИГР */
+
+.game-section {
+    margin-bottom: 38px;
+}
+
+.game-section h2 {
+    font-size: clamp(19px, 5vw, 27px);
+
+    color: #C8F3FF;
+
+    text-shadow:
+        0 0 8px #50CFFF,
+        0 0 18px #1679B5;
+}
+
+/* ПОЛОСЫ РАЗДЕЛОВ */
+
+.section-line {
+    width: 100%;
+    height: 1px;
+
+    margin-top: 13px;
+
+    background: linear-gradient(
+        90deg,
+        #4FCBFF,
+        #D7F8FF,
+        #4FCBFF
+    );
+
+    box-shadow: 0 0 9px #42BFFF;
+}
+
+/* МЕСТО ДЛЯ ИГР */
+
+.games-space {
+    min-height: 65px;
+    margin-top: 15px;
+}
+
+/* НИЖНЯЯ НАДПИСЬ */
+
+footer {
+    text-align: center;
+
+    margin-top: 55px;
+    padding-bottom: 15px;
+
+    color: #456985;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
