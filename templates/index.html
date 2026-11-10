@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MINI GAMES</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+
+<body>
+
+    <div class="stars"></div>
+    <div class="stars-2"></div>
+    <div class="stars-3"></div>
+
+    <main class="container">
+
+        <header class="header">
+            <h1>•MINI•GAMES•</h1>
+        </header>
+
+        <div class="main-line"></div>
+
+        <div class="tagline">
+            PLAY•FOR•FREE
+        </div>
+
+        <section class="game-section">
+
+            <h2>•NO•COIN•GAMES•</h2>
+
+            <div class="section-line"></div>
+
+            <div class="games-space">
+                <!-- Здесь будут бесплатные игры -->
+            </div>
+
+        </section>
+
+        <section class="game-section">
+
+            <h2>•COIN•GAMES•</h2>
+
+            <div class="section-line"></div>
+
+            <div class="games-space">
+                <!-- Здесь будут игры за монеты -->
+            </div>
+
+        </section>
+
+        <footer>
+            MINI GAMES • 2026
+        </footer>
+
+    </main>
+
+    <script>
+        if (window.Telegram && window.Telegram.WebApp) {
+            const tg = window.Telegram.WebApp;
+            tg.ready();
+            tg.expand();
+        }
+    </script>
+
+</body>
+</html>
